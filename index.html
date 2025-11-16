@@ -52,7 +52,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body" id="mensaje">
-                    Hello, world! This is a toast message.
                 </div>
             </div>
         </div>
@@ -64,12 +63,14 @@
             <fieldset>
                 <legend class="text-center w-100">Tareas</legend>
                     <div class="mb-3">
-                        <label for="nueva-tarea" class="form-label">En esta sección puede agregar las tareas que realizar</label>
-                        <input type="text" id="nueva-tarea" class="form-control" placeholder="Ingrese la tarea aquí">
+                        <label for="nueva-tarea" class="form-label">En esta sección puede agregar las tareas a realizar</label>
+                        <input type="text" id="nueva-tarea" class="form-control" placeholder="Ingrese la tarea aquí" required minlength="5">
                     </div>
                 <div class="mb-3">
                 <button type="submit" class="btn btn-primary w-100" id="agregar">Agregar</button>
             </fieldset>
+            <div id="alert-container"></div>
+            <div id="alert-container"></div>
         </form>
     </div>
 

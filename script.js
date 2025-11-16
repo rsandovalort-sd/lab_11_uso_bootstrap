@@ -2,16 +2,31 @@ document.getElementById("agregar").addEventListener('click', function(event){
     event.preventDefault();
     const input = document.getElementById("nueva-tarea");
     const texto = input.value.trim();
-
+    
+    if (!texto) {
+        alertaFormulario("El campo no puede estar vacío", "danger");
+        input.focus();
+        return;
+    }
+    if (texto.length <= 6) {
+        alertaFormulario("La tarea debe tener al menos 6 caracteres", "danger");
+        input.focus();
+        return;
+    }
+    if (texto.length > 21) {
+        alertaFormulario("La tarea debe tener máximo 20 caracteres", "danger");
+        input.focus();
+        return;
+    }
     if(texto){
         const li = document.createElement('li');
         li.className = 'list-group-item d-flex justify-content-between align-items-center';
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.className = 'form-check-input me-1';
+        checkbox.className = 'form-check-input me-1 checkbox_personalizado';
         checkbox.addEventListener('change', function() {
         if(checkbox.checked) {
-            actualizarConteo();s
+            actualizarConteo();
         }
         });
         const label = document.createElement('label');
@@ -60,4 +75,22 @@ const toast = new bootstrap.Toast(elemento_toast);
 function mostrarToast(mensaje){
     document.getElementById("mensaje").textContent = mensaje;
     toast.show();
+}
+
+function alertaFormulario(mensaje, tipo ="success"){
+    const alerta = document.getElementById("alert-container");
+    alerta.innerHTML= `
+    <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+        ${mensaje}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`;
+}
+
+function alertaFormulario(mensaje, tipo ="success"){
+    const alerta = document.getElementById("alert-container");
+    alerta.innerHTML= `
+    <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+        ${mensaje}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`;
 }
