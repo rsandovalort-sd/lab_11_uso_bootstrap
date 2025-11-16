@@ -11,14 +11,14 @@ document.getElementById("agregar").addEventListener('click', function(event){
         checkbox.className = 'form-check-input me-1';
         checkbox.addEventListener('change', function() {
         if(checkbox.checked) {
-            actualizarConteo();
+            actualizarConteo();s
         }
         });
         const label = document.createElement('label');
         label.textContent = texto;
         label.className = 'flex-grow-1';
         const btnBorrar = document.createElement('button');
-        btnBorrar.className = 'btn btn-danger btn-sm ms-2';
+        btnBorrar.className = 'btn btn-primary btn-sm ms-2';
         btnBorrar.textContent = 'Eliminar';
         btnBorrar.addEventListener('click', function(){
             li.remove();
@@ -28,14 +28,12 @@ document.getElementById("agregar").addEventListener('click', function(event){
         li.appendChild(label);
         li.appendChild(btnBorrar);        
         document.getElementById('lista-tarea').appendChild(li);
+        mostrarToast("Tarea agregada exitosamente") 
         input.value = ""; 
-        mostrarToast("Tarea agregada exitosamente"); 
         actualizarConteo();
     }
 
 }) 
-
-
 function contarTareas(){
     let tareas_pendientes = 0;
     let tareas_realizadas = 0;
@@ -60,6 +58,6 @@ function actualizarConteo(){
 const elemento_toast = document.getElementById("liveToast");
 const toast = new bootstrap.Toast(elemento_toast);
 function mostrarToast(mensaje){
-    document.getElementById("mensajeToast").textContent = mensaje;
+    document.getElementById("mensaje").textContent = mensaje;
     toast.show();
 }

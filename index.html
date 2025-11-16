@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">    
 </head>
 
 <body>
@@ -26,12 +27,12 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav" id="opciones">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#agregar">Agregar</a>
+                                <a class="nav-link" href="#agregar1">Agregar</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#tareas">Tareas</a>
@@ -42,14 +43,28 @@
                 </div>
             </nav>
         </div>
+
+        <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1080;">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Listado de tareas</strong>
+                    <small>Now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="mensaje">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
+        </div>
+
     </header>
 
-    <div class="container mt-5 d-flex justify-content-center" id="agregar" style="margin-top: 150px !important" >
-        <form  style="max-width: 400px; width: 100%;">
+    <div class="container mt-5 d-flex justify-content-center" id="agregar1" style="margin-top: 150px !important" >
+        <form  id= "formulario" style="max-width: 400px; width: 100%;">
             <fieldset>
                 <legend class="text-center w-100">Tareas</legend>
                     <div class="mb-3">
-                        <label for="nueva-tarea" class="form-label">Agregue abajo la tarea</label>
+                        <label for="nueva-tarea" class="form-label">En esta sección puede agregar las tareas que realizar</label>
                         <input type="text" id="nueva-tarea" class="form-control" placeholder="Ingrese la tarea aquí">
                     </div>
                 <div class="mb-3">
@@ -58,32 +73,30 @@
         </form>
     </div>
 
-    <div class="container mt-5 d-flex flex-column justify-content-center align-items-center col-lg-4 " id="tareas">
+    <div class="container mt-5 d-flex flex-column justify-content-center col-lg-4 " id="tareas">
         <p id="conteo"></p>        
         <ul class="list-group" id="lista-tarea" style="margin-top: 50px !important">
 
         </ul>
     </div>
-    
 
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-            <img src="..." class="rounded me-2" alt="...">
-            <strong class="me-auto">Lista de tareas</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body" id="mensajeToast">
-                Tarea agregada exitosamente
-            </div>
-        </div>
-    </div>
-    
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    
+    <script src="script.js"></script>  
 </body>
 
+<footer>
+    <div class="container mt-5 d-flex flex-column justify-content-center col-lg-2" id="logos_enlace">
+        <h6>Ricardo Sandoval Ortiz</h6>
+        <div>
+            <a href="https://www.linkedin.com/in/ricardo-sandoval-ortiz-developer/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://github.com/rsandovalort-sd" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i>
+            </a> 
+            
+        </div>     
+    </div>
+</footer>
+    
 </html>
